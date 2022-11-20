@@ -5,7 +5,7 @@ import UsersListComponent from "./components/UsersListComponent";
 function App() {
   return (
     <div className="App">
-      <main>
+      <main className="flex flex-col content-center items-center w-full">
         <SearchComponent />
         <UsersListComponent />
       </main>

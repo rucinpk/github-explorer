@@ -6,12 +6,12 @@ interface Props {
 
 const RepositoryComponent: React.FC<Props> = ({ repository }: Props) => {
   return (
-    <div className="bg-gray-300 p-3 w-full flex flex-row gap-1 max-w-xs justify-between">
+    <div className="bg-gray-300 p-3 flex flex-row gap-1 w-[99%] justify-between ">
       <div>
-        <div className="text-lg font-semibold">{repository.name}</div>
+        <div className="text-lg font-bold">{repository.name}</div>
         <div>{repository.description}</div>
       </div>
-      <div className="flex flex-row gap-2 ">
+      <div className="flex flex-row gap-2 font-bold">
         {repository.starsCount}{" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"

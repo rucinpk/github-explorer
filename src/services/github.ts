@@ -1,7 +1,7 @@
 import { Octokit } from "octokit";
 
 const octokit = new Octokit({
-  auth: process.env.REACT_APPGITHUB_ACCESS_TOKEN,
+  auth: process.env.REACT_APPGITHUB_ACCESS_TOKEN || "",
 });
 export const listUsers = async (name: string) => {
   return await octokit.request(
@@ -11,14 +11,12 @@ export const listUsers = async (name: string) => {
 };
 export const listUserRepos = async (login: string) => {
   return await octokit.request(
-    "GET /users/{username}/repos{?type,sort,direction,per_page,page}",
+    "GET /users/{username}/repos{?type,sort,direction}",
     {
       username: login,
       type: "all",
       sort: "asc",
       direction: "asc",
-      per_page: 5,
-      page: 1,
     }
   );
 };

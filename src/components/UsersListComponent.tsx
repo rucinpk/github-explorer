@@ -19,7 +19,7 @@ const UsersListComponent = () => {
   const { users, toggleUserSelected, setUserRepositories } = useStore();
 
   return (
-    <div className="p-3 w-full flex flex-col gap-1 max-w-xs">
+    <div className="p-3 w-full flex flex-col gap-1">
       {users.map(({ login, isSelected, repositories }: User, index: number) => (
         <div key={index}>
           <div
@@ -66,7 +66,7 @@ const UsersListComponent = () => {
               )}
             </div>
           </div>
-          <div className="flex flex-col gap-2 pl-2 py-1">
+          <div className="flex flex-col gap-2 py-1 content-end items-end">
             {isSelected ? (
               repositories.map((repository: Repository, index: number) => (
                 <RepositoryComponent key={index} repository={repository} />
